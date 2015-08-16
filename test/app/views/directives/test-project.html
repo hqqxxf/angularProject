@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="text-center">web前端笔试编程题</h1>
+  <div class="">
+    <h4>1.截取abcdefg中的efg</h4>
+    <p>{{str}}</p>
+  </div>
+  <div>
+    <h4>2.判断一个字符串中出现次数最多的字符，统计这个次数</h4>
+    <p>{{string}}===>>{{max}}</p>
+  </div>
+  <div>
+    <h4>3.IE 和 FF下兼容性问题</h4>
+    <p>
+      (1)IE：有window.event，FF：没有window.event<br>
+      所以用var = event || window.event;
+    </p>
+    <p>
+      (2)target 和 srcElement
+    </p>
+    <p>
+      (3)FF : addEventListener("click",function,isCapture_boolean);
+      IE : attachEvent("onclick",function);
+    </p>
+  </div>
+  <div>
+    <h4>4.编写一个方法,去掉一个<span class="color-red">数组</span>的重复元素</h4>
+    <p>
+      {{arr}}------->{{arr_new}}
+    </p>
+    <h5>拓展：</h5>
+    <p>
+      数组的方法：push/pop(stack),shift/unshift(queue),concat,slice,splice,reverse
+      其中slice不影响arr数组
+    </p>
+    <p>
+      判断是否是数组的方法：Object.prototype.toString.call(arr) == "[object Array]"
+    </p>
+  </div>
+
+  <div>
+    <h4>6.JavaScript中如何检测一个变量是一个<span class="color-red">String类型</span>？请写出函数实现</h4>
+    <p></p>
+  </div>
+
+  <div>
+    <h4>5.写出3个使用this的典型应用</h4>
+  </div>
+</div>

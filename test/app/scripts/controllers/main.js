@@ -8,10 +8,11 @@
  * Controller of the testApp
  */
 angular.module('testApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('MainCtrl',['$scope', function ($scope) {
+    $scope.user = {
+      username : "",
+      phoneNumber : "",
+      age : 0,
+      password : ''
+    }
+  }]);
