@@ -12,7 +12,7 @@ angular.module('testApp')
       templateUrl: 'views/directives/test-footer.html',
       restrict: 'AE',
       link: function postLink(scope, element, attrs) {
-          console.log(scope);
+
       }
     };
   });

@@ -58,13 +58,65 @@ angular.module('testApp')
         }
 
         //6
-        var str1 = "dddd";
-        var str2 = new String('dddd');
+        var str1 = "dddd",str2 = new String('dddd');
         function isString(str){
           return (typeof str == "String" || str.constructor == String);
         }
         console.log(isString(str1));
         console.log(isString(str2));
+
+        //7
+        //写cookies
+
+//        function setCookie(name,value)
+//        {
+//          var Days = 30;
+//          var exp = new Date();
+//          exp.setTime(exp.getTime() + Days*24*60*60*1000);
+//          document.cookie = name + "="+ value + ";expires=" + exp.toGMTString();
+//        }
+//
+////读取cookies
+//        function getCookie(name)
+//        {
+//          var reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)"),
+//            arr=document.cookie.match(reg);
+//          return arr[2];
+//        }
+//
+////删除cookies
+//        function delCookie(name)
+//        {
+//          var exp = new Date();
+//          exp.setTime(exp.getTime() - 1);
+//          var cval=getCookie(name);
+//          if(cval!=null)
+//            document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+//        }
+        var cookieUtil = {
+            setCookie: function(value,key,expireDay){
+              expireDay = expireDay ? expireDay : 30;
+              var expires = new Date();
+              expires.setTime(expires.getTime() + expireDay*24*3600*1000);
+              document.cookie = value + '=' + key + ';expires=' + expires.toGMTString();
+            },
+            getCookie: function(name){
+                var reg = new RegExp('(^| )' + name + '=' + '([^;]*)(;|$)'),arr;
+                if(arr = document.cookie.match(reg)){
+                    return arr[2];
+                }else{
+                  return null;
+                }
+            },
+            delCookie: function(value){
+                this.setCookie(value,null,-1);
+            }
+        };
+//使用示例
+        cookieUtil.delCookie("name");
+        cookieUtil.setCookie("name","..hqq");
+        console.log(cookieUtil.getCookie("name"));
+
       }
     };
   });
